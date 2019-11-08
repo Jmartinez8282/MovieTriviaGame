@@ -1,23 +1,24 @@
+// load our JSON Data
+//XML HTTP-REQUEST
+
+
 let xmlhttp = new XMLHttpRequest();
 let url = "data.json";
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         let myArr = JSON.parse(this.responseText);
-        tQuestions(myArr);
+        myQuestions(myArr);
     }
 };
+// Opening the Connection
 xmlhttp.open("GET", url, true);
+//Sedning the request
 xmlhttp.send();
 
-//create and array
-let hQ = [];
-let hQObj = [];
+//Function is called insdei HTTP Request.
 
-
-
-
-function tQuestions(info){
+function myQuestions(info){
     console.log(info);
 
     for (let i = 0; i< info.hQ.length; i++){
@@ -49,3 +50,23 @@ function tQuestions(info){
 
     }
 }
+// This is wehre we make our buttons
+let playBtn = document.getElementById('plBtn');
+let optionsBtn = document.getElementById('optBtn');
+
+// Get access to our H1 Tag
+
+let  h1question = document.getElementById('question') 
+
+//Now Make our event listeners
+
+playBtn.addEventListener('click',function(e){
+h1question.innerText = "Who is Rocy?"
+});
+optionsBtn.addEventListener('click',function(e){
+
+});
+
+
+
+

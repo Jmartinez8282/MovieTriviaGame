@@ -34,6 +34,7 @@ function loadQuestions(info){
     //Setup our Objects for the game
     hQ = info.hQ;
     console.log(hQ);
+    displayQuestion();
 
 
    // for (let i = 0; i< info.hQ.length; i++){
@@ -65,6 +66,10 @@ function loadQuestions(info){
 
    // }
 }
+displayQuestion()
+
+//Fill in out Buttons
+//Start Timer
 
 //This runs our JSON data
 loadJSON();

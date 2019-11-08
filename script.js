@@ -26,10 +26,14 @@ xmlhttp.send();
 
 
 }
-let questions = [];
+let hQ = [];
+
 function loadQuestions(info){
-    console.log(info.questions);
+   console.log(info.hQ[0].q);
+
     //Setup our Objects for the game
+    hQ = info.hQ;
+    console.log(hQ[0].q);
 
 
    // for (let i = 0; i< info.hQ.length; i++){

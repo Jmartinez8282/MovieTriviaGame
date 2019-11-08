@@ -33,7 +33,7 @@ function loadQuestions(info){
 
     //Setup our Objects for the game
     hQ = info.hQ;
-    console.log(hQ[0].q);
+    console.log(hQ);
 
 
    // for (let i = 0; i< info.hQ.length; i++){

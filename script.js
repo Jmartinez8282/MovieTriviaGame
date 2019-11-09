@@ -34,15 +34,22 @@ function loadQuestions(info){
     //Setup our Objects for the game
     hQ = info.hQ;
     console.log(hQ);
-    displayQuestion();
+    displayQuestion();{
+mainQuestions.innertText= hQ[0].q;
 
 
-   // for (let i = 0; i< info.hQ.length; i++){
+
+    }
+let a1 =document.getElementById('a1')
+
+let mainQuestions = document.getElementById('mainQuestions');
+
+   for (let i = 0; i< info.hQ.length; i++){
         //Create and Oject for esch loop in array
-     //   let nFO = {
-       //      "q":info.hQ[i].q,
-    //         "aA":info.hQ[i].aA
-//         };
+        let nFO = {
+             "q":info.hQ[i].q,
+            "aA":info.hQ[i].aA
+       };
 
 
 

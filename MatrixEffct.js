@@ -12,6 +12,7 @@ var draw = function () {
     x_pos = index * 10;
     q.getContext('2d').fillText(text, x_pos, y_pos);
     letters[index] = (y_pos > 758 + Math.random() * 1e4) ? 0 : y_pos + 10;
+    
   });
 };
 setInterval(draw, 33);

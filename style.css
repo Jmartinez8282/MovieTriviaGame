@@ -52,6 +52,16 @@ padding: 50px,50px;
 
 
 }
+.answerBtn{
+
+  margin-bottom:75px;
+    margin-top:20px;
+    
+padding: 50px,50px;
+    font-size: 1em;
+    color:rgba(16, 185, 236, 0.849);
+    background:rgba(13, 24, 180, 0.466)
+}
     
     
 

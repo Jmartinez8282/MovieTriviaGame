@@ -5,6 +5,8 @@ let triviaQ = [];
 let totalQuestions = 20;
 let totalScore = 0;
 let Incorrect = 0;
+let timer = 5;
+let interval;
 
 let tQuestions = [];
 let diff1='easyQ.json';
@@ -12,7 +14,7 @@ let qNum = 0;
 
 /////Randmomize 150 questions and selectt 20 questions///---------------------------------///
 
-function loadQuestions(){
+function loadQuestion(){
     let xmlhttp = new XMLHttpRequest();
     let url = "";
 
@@ -45,7 +47,7 @@ function allQuestions(q){
     console.log(triviaQ);
 }
 
-loadQuestions();    
+loadQuestion();    
 
 
 
@@ -88,6 +90,9 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         triviaQ=JSON.parse(this.responseText).easyQ;
        console.log(triviaQ);
+
+ interval = setInterval
+       loadQuestion();
        
     }
 };
@@ -122,9 +127,55 @@ function checkAnswer(answer){
     else{
         incorrect++;
     }
-     correct.innerText='${totalScore}/${totalQuestions}';
+     correct.innerText = '{totalScore}/${totalQuestions}';
+     timer = 5;
+     nextQuestions();
+
+     /////////------------Go to next Questions ////
+
 }
 
+///next question//
+
+function nextQuestions(){
+    //prep  to go to the next question
+    //loadQuestion
+    
+    if (qNum<totalQuesitons){
+
+        ///will runutil you hit toal questions = 20;
+        qNum++;
+        loadQuestion();
+
+        
+    }
+    else{
+        //
+        clearInterval(interval);
+        //Load up Ending screen
+        alert("you finsihed the game. Congrats. I have Spoken");
+    }
+
+}
+
+//--------------------//------------------------------////
+//set our timer////
+function updateTime(){
+    //Make sure time isn't over and its is shownng correc time
+
+    timer--;
+    if(timer == 0){
+        timer = 5;
+        counter.innerText = timer;
+        nextQuestions();
+    }
+    else{
+
+        counter.innerText = timer;
+    }
+    
+
+}
 ///----------------------//------------------------------///
 
 
@@ -132,5 +183,30 @@ function checkAnswer(answer){
 loadJSON(diff1)
 ////----------------------------------------------------------------------------------------------------------------------------///////
 
+//Retrive html elements
+
+let inject = document.getElementById('inject');
+let injectBtn = document.getElementById('injectBtn');
+
+injectBtn.addEventListener('click',function(e){
+//Call loadJSON to inject HTML
+loadJSON();
+
+});
+function loadJSON(url){
+    let xmlhttp = new XMLHttpRequest();
+let url = "gamePage.html";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        let myArr = this.responseText//JSON.parse(this.responseText);
+        console.log(myArr);
+       // injectHTML(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+}
 
 

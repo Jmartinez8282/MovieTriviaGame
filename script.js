@@ -56,7 +56,7 @@ loadQuestions();
 
 let correct = document.getElementById('correct');
 let counter = document.getElementById('counter');
-let queastions = document.getElementById('questions');
+let questions = document.getElementById('questions');
 
 let a1 = document.getElementById('a1');
 let a2 = document.getElementById('a2');
@@ -64,12 +64,12 @@ let a3 = document.getElementById('a3');
 let a4 = document.getElementById('a4');
 
 //// get our buttons and add eventlisteners---------//
-let buttons = document.getElementsByClassName('btn')
+//let a1 = document.getElementsByClassName('a1')
 
 
-for (let i = 0; i<buttons.length; i++){
+for (let i = 0; i<triviaQ.length; i++){
     //going to add our eventlisteners
-    buttons[i].addEventListener('click',function(e){
+    triviaQ[i].addEventListener('click',function(e){
        // alert("you clickt a button");
 
        checkAnswer(e.toElement.innerText);
@@ -86,8 +86,8 @@ let xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        tQuestions=JSON.parse(this.responseText).easyQ;
-       console.log(tQuestions);
+        triviaQ=JSON.parse(this.responseText).easyQ;
+       console.log(triviaQ);
        
     }
 };
@@ -95,14 +95,14 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
 
-function loadQuestion(){
+function loadQuestion(triviaQ){
 
-    tQuestions.innerText=tQuestions[qNum].q;
+    triviaQ.innerText=triviaQ[qNum].q;
 
-    a1.innerText = tQuestions[qNum].a1;
-    a2.innerText = tQuestions[qNum].a2;
-    a3.innerText = tQuestions[qNum].a3;
-    a4.innerText = tQuestions[qNum].a4;
+    a1.innerText = triviaQ[qNum].a1;
+    a2.innerText = triviaQ[qNum].a2;
+    a3.innerText = triviaQ[qNum].a3;
+    a4.innerText = triviaQ[qNum].a4;
 
     //for loop in buttons//
 
@@ -116,7 +116,7 @@ function checkAnswer(answer){
     //increment your correct number
 
     if 
-    ( answer === tQuestions[qNum].correct){
+    ( answer === triviaQ[qNum].correct){
         totalScore++;
     } 
     else{

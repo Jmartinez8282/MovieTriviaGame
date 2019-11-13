@@ -47,7 +47,65 @@ function allQuestions(q) {
 }
 loadQuestion();
 
+let inject = document.getElementById('inject');
+let playBtn = document.getElementById('playBtn');
 
+function loadHTML(url) {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let myArr = this.responseText;//JSON.parse(this.responseText);
+            console.log(myArr);
+            //inject.innerHTML = myArr;
+            //Add our conditinal Statements
+            if (url == "gamePage.html") {
+
+
+                //Attached to buttoon that exists in indexpage 1
+                let playBtn = document.getElementById('playBtn');
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML("gamePage.html")
+                    gamePageLoad(myArr);
+                });
+
+            } else if (url == 'options.html') {
+                let playBtn = document.getElementById('optBtn');
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML("options.html")
+                });
+
+            } else if (url == 'instruction.html') {
+                let playBtn = document.getElementById('instBtn');
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML("instruction.html")
+                });
+
+            } else if (url == 'menu.html') {
+                let playBtn = document.getElementById('menuBtn');
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML("menu.html")
+                });
+
+            } else if (url == 'win.html') {
+                let playBtn = document.getElementById('winBtn');
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML("win.html")
+                });
+
+            } else if (url == 'gameover.html') {
+                let playBtn = document.getElementById('gmoBtn');
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML("gameover.html")
+                });
+
+            }
+        }
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+    }
+/*
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
 //CORRECT, COUNTER, QUESTIONS, BUTTONS-USING A CLASS
@@ -82,7 +140,8 @@ function loadJSON() {
 
 
     xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200)
+        {
             triviaQ = JSON.parse(this.responseText).easyQ;
             console.log(triviaQ);
 
@@ -95,7 +154,8 @@ function loadJSON() {
     xmlhttp.send();
 }
 
-function loadQuestion() {
+function loadQuestion()
+{
 
     questions.innerText = triviaQ[qNum].q;
 
@@ -111,8 +171,9 @@ function loadQuestion() {
 
 
 ///-----------------//////
-function checkAnswer(answer) {
-    //Retrive teh answer and see if its correct 
+function checkAnswer(answer)
+{
+    //Retrive teh answer and see if its correct
     //increment your correct number
 
     if
@@ -132,11 +193,13 @@ function checkAnswer(answer) {
 
 ///next question//
 
-function nextQuestions() {
+function nextQuestions()
+{
     //prep  to go to the next question
     //loadQuestion
 
-    if (qNum < totalQuesitons) {
+    if (qNum < totalQuesitons)
+    {
 
         ///will runutil you hit toal questions = 20;
         qNum++;
@@ -144,7 +207,8 @@ function nextQuestions() {
 
 
     }
-    else {
+    else
+    {
         //
         clearInterval(interval);
         //Load up Ending screen
@@ -180,66 +244,12 @@ loadJSON(diff)
 
 //Retrive html elements
 
-let inject = document.getElementById('inject');
-let playBtn = document.getElementById('playBtn');
-
-function loadHTML(url) {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () 
-    {
-        if (this.readyState == 4 && this.status == 200) {
-            let myArr = this.responseText;//JSON.parse(this.responseText);
-            console.log(myArr);
-            inject.innerHTML=myArr;
-            //Add our conditinal Statements
-            if (url == "gamePage.html") {
-                //Attached to buttoon that exists in page 1
-        let playBtn = document.getElementById('playBtn');
-        playBtn.addEventListener('click', function (e) {
-            loadHTML("gamePage.html")
-        });
-               
-            } else if ( url == 'options.html'){
-                let playBtn = document.getElementById('optBtn');
-        playBtn.addEventListener('click', function (e) {
-            loadHTML("options.html")
-        });
-                
-            } else if (url == 'instruction.html'){
-                let playBtn = document.getElementById('instBtn');
-        playBtn.addEventListener('click', function (e) {
-            loadHTML("instruction.html")
-        });
-                
-            }else if( url == 'menu.html'){
-                let playBtn = document.getElementById('menuBtn');
-        playBtn.addEventListener('click', function (e) {
-            loadHTML("menu.html")
-        });
-                
-            }else if ( url == 'win.html'){
-                let playBtn = document.getElementById('winBtn');
-        playBtn.addEventListener('click', function (e) {
-            loadHTML("win.html")
-        });
-              
-            }else if ( url == 'gameover.html'){
-                let playBtn = document.getElementById('gmoBtn');
-        playBtn.addEventListener('click', function (e) {
-            loadHTML("gameover.html")
-        });
-            
-               
-            }
-
-           
-        }
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-
-}
 
 
 
 
+
+
+
+
+*/

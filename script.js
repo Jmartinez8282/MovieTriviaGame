@@ -16,7 +16,7 @@ let qNum = 0;
 
 function loadQuestion(){
     let xmlhttp = new XMLHttpRequest();
-    let url = "";
+   let url = "";
 
     if(diff== "easy"){
         url="easyQ.json";
@@ -80,7 +80,7 @@ for (let i = 0; i<triviaQ.length; i++){
 }
 
 //creat our JSON DATEA LOAD//
-function loadJSON(url){
+function loadJSON(){
 
    
 let xmlhttp = new XMLHttpRequest();
@@ -180,7 +180,7 @@ function updateTime(){
 
 
 ///---------------------//-------------------------------///
-loadJSON(diff1)
+loadJSON(diff)
 ////----------------------------------------------------------------------------------------------------------------------------///////
 
 //Retrive html elements
@@ -190,18 +190,24 @@ let injectBtn = document.getElementById('injectBtn');
 
 injectBtn.addEventListener('click',function(e){
 //Call loadJSON to inject HTML
-loadJSON();
+loadJSON("gamePage.html");
 
 });
 function loadJSON(url){
     let xmlhttp = new XMLHttpRequest();
-let url = "gamePage.html";
+//let url = "gamePage.html";
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        let myArr = this.responseText//JSON.parse(this.responseText);
+        let myArr = this.responseText;//JSON.parse(this.responseText);
         console.log(myArr);
-       // injectHTML(myArr);
+       // inject.innerHTML=myArr;
+       //Add our conditinal Statements
+       if(url=="gamePage.html"){
+           page1Load(myArr);
+       }
+
+      // page1Load(myArr);
     }
 };
 xmlhttp.open("GET", url, true);
@@ -209,4 +215,25 @@ xmlhttp.send();
 
 }
 
+function optionsLoad(info){
 
+    //Going to load page 1 HTML Elements and click event
+inject.innerHTML = info;
+let injectBtn = document.getElementById('injectBtn');
+
+injectBtn.addEventListener('click',function(e){
+
+    alert("you clicked me");
+//Attached to buttoon that exists in page 1
+    let pg2Btn = document.getElementById('pg2Btn');
+    pg2Btn.addEventListener('click',function(e){
+loadJSON("options.html")
+    });
+
+});
+
+}
+function optonsLoad(info){
+    inject.innerHTML = info;
+
+}

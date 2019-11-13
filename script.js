@@ -1,6 +1,6 @@
 
 //-----------DECLARE OUR VARIABLES
-let diff= "easy";  //Can be medium or hard
+let diff = "easy";  //Can be medium or hard
 let triviaQ = [];
 let totalQuestions = 20;
 let totalScore = 0;
@@ -13,21 +13,19 @@ let qNum = 0;
 
 /////Randmomize 150 questions and selectt 20 questions///---------------------------------///
 
-function loadQuestion(){
+function loadQuestion() {
     let xmlhttp = new XMLHttpRequest();
-   let url = "easyQ.json";
+    let url = "easyQ.json";
 
-    if(diff== "easy"){
-        url="easyQ.json";
+    if (diff == "easy") {
+        url = "easyQ.json";
     }
-    if (diff == ""){
+    if (diff == "") {
 
     }
-    
-    xmlhttp.onreadystatechange = function() 
-    {
-        if (this.readyState == 4 && this.status == 200) 
-        {
+
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
             let myArr = JSON.parse(this.responseText);
             allQuestions(myArr);
         }
@@ -35,22 +33,21 @@ function loadQuestion(){
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
-function allQuestions(q)
-{
+function allQuestions(q) {
     console.log(q.ezQ[49]);
     let qNum = 0;
-    for (let i = 0; i < totalQuestions; i++)
-    {
-      //  We are going to shuffle
+    for (let i = 0; i < totalQuestions; i++) {
+        //  We are going to shuffle
         qNum = Math.floor(Math.random() * q.ezQ.length);
         console.log(qNum);
         triviaQ.push(q.ezQ[qNum]);
-        q.ezQ.splice(qNum,1);
+        q.ezQ.splice(qNum, 1);
     }
-    console.log(qNum);
+    console.log(triviaQ);
 }
-loadQuestion();    
-/*
+loadQuestion();
+
+
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
 //CORRECT, COUNTER, QUESTIONS, BUTTONS-USING A CLASS
@@ -67,40 +64,40 @@ let a4 = document.getElementById('a4');
 //// get our buttons and add eventlisteners---------//
 //let a1 = document.getElementsById('a1')
 
-for (let i = 0; i<triviaQ.length; i++){
+for (let i = 0; i < triviaQ.length; i++) {
     //going to add our eventlisteners
-    triviaQ[i].addEventListener('click',function(e){
-       // alert("you clickt a button");
+    triviaQ[i].addEventListener('click', function (e) {
+        // alert("you clickt a button");
 
-       checkAnswer(e.toElement.innerText);
+        checkAnswer(e.toElement.innerText);
 
     });
 }
 
 //creat our JSON DATEA LOAD//
-function loadJSON(){
-
-   
-let xmlhttp = new XMLHttpRequest();
+function loadJSON() {
 
 
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        triviaQ=JSON.parse(this.responseText).easyQ;
-       console.log(triviaQ);
+    let xmlhttp = new XMLHttpRequest();
 
- interval = setInterval
-       loadQuestion();
-       
+
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            triviaQ = JSON.parse(this.responseText).easyQ;
+            console.log(triviaQ);
+
+            interval = setInterval
+            loadQuestion();
+
+        }
     }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 }
 
-function loadQuestion(triviaQ){
+function loadQuestion() {
 
-    triviaQ.innerText=triviaQ[qNum].q;
+    questions.innerText = triviaQ[qNum].q;
 
     a1.innerText = triviaQ[qNum].a1;
     a2.innerText = triviaQ[qNum].a2;
@@ -114,40 +111,40 @@ function loadQuestion(triviaQ){
 
 
 ///-----------------//////
-function checkAnswer(answer){
+function checkAnswer(answer) {
     //Retrive teh answer and see if its correct 
     //increment your correct number
 
-    if 
-    ( answer === triviaQ[qNum].correct){
+    if
+        (answer === triviaQ[qNum].correct) {
         totalScore++;
-    } 
-    else{
+    }
+    else {
         incorrect++;
     }
-     correct.innerText = '{totalScore}/${totalQuestions}';
-     timer = 5;
-     nextQuestions();
+    correct.innerText = '{totalScore}/${totalQuestions}';
+    timer = 5;
+    nextQuestions();
 
-     /////////------------Go to next Questions ////
+    /////////------------Go to next Questions ////
 
 }
 
 ///next question//
 
-function nextQuestions(){
+function nextQuestions() {
     //prep  to go to the next question
     //loadQuestion
-    
-    if (qNum<totalQuesitons){
+
+    if (qNum < totalQuesitons) {
 
         ///will runutil you hit toal questions = 20;
         qNum++;
         loadQuestion();
 
-        
+
     }
-    else{
+    else {
         //
         clearInterval(interval);
         //Load up Ending screen
@@ -158,20 +155,20 @@ function nextQuestions(){
 
 //--------------------//------------------------------////
 //set our timer////
-function updateTime(){
+function updateTime() {
     //Make sure time isn't over and its is shownng correc time
 
     timer--;
-    if(timer == 0){
+    if (timer == 0) {
         timer = 5;
         counter.innerText = timer;
         nextQuestions();
     }
-    else{
+    else {
 
         counter.innerText = timer;
     }
-    
+
 
 }
 ///----------------------//------------------------------///
@@ -186,52 +183,55 @@ loadJSON(diff)
 let inject = document.getElementById('inject');
 let injectBtn = document.getElementById('injectBtn');
 
-injectBtn.addEventListener('click',function(e){
-//Call loadJSON to inject HTML
-loadJSON("gamePage.html");
+injectBtn.addEventListener('click', function (e) {
+    //Call loadJSON to inject HTML
+    loadJSON("gamePage.html");
 
 });
-function loadJSON(url){
+function loadHTML(url) {
     let xmlhttp = new XMLHttpRequest();
-//let url = "gamePage.html";
+    //let url = "gamePage.html";
 
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        let myArr = this.responseText;//JSON.parse(this.responseText);
-        console.log(myArr);
-       // inject.innerHTML=myArr;
-       //Add our conditinal Statements
-       if(url=="gamePage.html"){
-           page1Load(myArr);
-       }
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let myArr = this.responseText;//JSON.parse(this.responseText);
+            console.log(myArr);
+            // inject.innerHTML=myArr;
+            //Add our conditinal Statements
+            if (url == "gamePage.html") {
+                gamePageLoad(myArr);
+            } else if ( url == 'options.html'){
+                gamePageLoad(myArr);
+            }
 
-      // page1Load(myArr);
-    }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+           
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 
 }
 
-function optionsLoad(info){
+function optionsLoad(info) {
 
     //Going to load page 1 HTML Elements and click event
-inject.innerHTML = info;
-let injectBtn = document.getElementById('injectBtn');
+    inject.innerHTML = info;
+    let injectBtn = document.getElementById('injectBtn');
 
-injectBtn.addEventListener('click',function(e){
+    injectBtn.addEventListener('click', function (e) {
 
-    alert("you clicked me");
-//Attached to buttoon that exists in page 1
-    let pg2Btn = document.getElementById('pg2Btn');
-    pg2Btn.addEventListener('click',function(e){
-loadJSON("options.html")
+        alert("you clicked me");
+        //Attached to buttoon that exists in page 1
+        let pg2Btn = document.getElementById('pg2Btn');
+        pg2Btn.addEventListener('click', function (e) {
+            loadJSON("options.html")
+        });
+
     });
 
-});
-
 }
-function optonsLoad(info){
+function optonsLoad(info) {
     inject.innerHTML = info;
 
-}*/
+}
+

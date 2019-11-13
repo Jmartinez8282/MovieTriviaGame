@@ -1,15 +1,14 @@
 
 //-----------DECLARE OUR VARIABLES
-let diff = "easy";
+let diff= "easy";  //Can be medium or hard
 let triviaQ = [];
 let totalQuestions = 20;
 let totalScore = 0;
 let Incorrect = 0;
 let timer = 5;
 let interval;
-
 let tQuestions = [];
-let diff1='easyQ.json';
+//let diff='easyQ.json';
 let qNum = 0;
 
 /////Randmomize 150 questions and selectt 20 questions///---------------------------------///
@@ -21,18 +20,24 @@ function loadQuestion(){
     if(diff== "easy"){
         url="easyQ.json";
     }
+    if (diff == ""){
+
+    }
     
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+    xmlhttp.onreadystatechange = function() 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
             let myArr = JSON.parse(this.responseText);
             allQuestions(myArr);
         }
-    };
+    }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
-function allQuestions(q){
-    console.log(q.ezQ[26]);
+function allQuestions(q)
+{
+    console.log(q.ezQ[49]);
     let qNum = 0;
     for (let i = 0; i < totalQuestions; i++)
     {
@@ -41,17 +46,11 @@ function allQuestions(q){
         console.log(qNum);
         triviaQ.push(q.ezQ[qNum]);
         q.ezQ.splice(qNum,1);
-        
-
     }
-    console.log(triviaQ);
+    console.log(qNum);
 }
-
-loadQuestions();    
-
-
-
-
+loadQuestion();    
+/*
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
 //CORRECT, COUNTER, QUESTIONS, BUTTONS-USING A CLASS
@@ -67,7 +66,6 @@ let a4 = document.getElementById('a4');
 
 //// get our buttons and add eventlisteners---------//
 //let a1 = document.getElementsById('a1')
-
 
 for (let i = 0; i<triviaQ.length; i++){
     //going to add our eventlisteners
@@ -95,7 +93,7 @@ xmlhttp.onreadystatechange = function() {
        loadQuestion();
        
     }
-};
+}
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
@@ -182,7 +180,7 @@ function updateTime(){
 ///---------------------//-------------------------------///
 loadJSON(diff)
 ////----------------------------------------------------------------------------------------------------------------------------///////
-/*
+
 //Retrive html elements
 
 let inject = document.getElementById('inject');

@@ -16,7 +16,7 @@ let qNum = 0;
 
 function loadQuestion(){
     let xmlhttp = new XMLHttpRequest();
-   let url = "";
+   let url = "easyQ.json";
 
     if(diff== "easy"){
         url="easyQ.json";
@@ -32,7 +32,7 @@ function loadQuestion(){
     xmlhttp.send();
 }
 function allQuestions(q){
-    console.log(q.ezQ[49]);
+    console.log(q.ezQ[26]);
     let qNum = 0;
     for (let i = 0; i < totalQuestions; i++)
     {
@@ -47,7 +47,7 @@ function allQuestions(q){
     console.log(triviaQ);
 }
 
-loadQuestion();    
+loadQuestions();    
 
 
 
@@ -66,7 +66,7 @@ let a3 = document.getElementById('a3');
 let a4 = document.getElementById('a4');
 
 //// get our buttons and add eventlisteners---------//
-//let a1 = document.getElementsByClassName('a1')
+//let a1 = document.getElementsById('a1')
 
 
 for (let i = 0; i<triviaQ.length; i++){
@@ -182,7 +182,7 @@ function updateTime(){
 ///---------------------//-------------------------------///
 loadJSON(diff)
 ////----------------------------------------------------------------------------------------------------------------------------///////
-
+/*
 //Retrive html elements
 
 let inject = document.getElementById('inject');
@@ -236,4 +236,4 @@ loadJSON("options.html")
 function optonsLoad(info){
     inject.innerHTML = info;
 
-}
+}*/

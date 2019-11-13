@@ -181,27 +181,55 @@ loadJSON(diff)
 //Retrive html elements
 
 let inject = document.getElementById('inject');
-let injectBtn = document.getElementById('injectBtn');
+let playBtn = document.getElementById('playBtn');
 
-injectBtn.addEventListener('click', function (e) {
-    //Call loadJSON to inject HTML
-    loadJSON("gamePage.html");
-
-});
 function loadHTML(url) {
     let xmlhttp = new XMLHttpRequest();
-    //let url = "gamePage.html";
-
-    xmlhttp.onreadystatechange = function () {
+    xmlhttp.onreadystatechange = function () 
+    {
         if (this.readyState == 4 && this.status == 200) {
             let myArr = this.responseText;//JSON.parse(this.responseText);
             console.log(myArr);
-            // inject.innerHTML=myArr;
+            inject.innerHTML=myArr;
             //Add our conditinal Statements
             if (url == "gamePage.html") {
-                gamePageLoad(myArr);
+                //Attached to buttoon that exists in page 1
+        let playBtn = document.getElementById('playBtn');
+        playBtn.addEventListener('click', function (e) {
+            loadHTML("gamePage.html")
+        });
+               
             } else if ( url == 'options.html'){
-                gamePageLoad(myArr);
+                let playBtn = document.getElementById('optBtn');
+        playBtn.addEventListener('click', function (e) {
+            loadHTML("options.html")
+        });
+                
+            } else if (url == 'instruction.html'){
+                let playBtn = document.getElementById('instBtn');
+        playBtn.addEventListener('click', function (e) {
+            loadHTML("instruction.html")
+        });
+                
+            }else if( url == 'menu.html'){
+                let playBtn = document.getElementById('menuBtn');
+        playBtn.addEventListener('click', function (e) {
+            loadHTML("menu.html")
+        });
+                
+            }else if ( url == 'win.html'){
+                let playBtn = document.getElementById('winBtn');
+        playBtn.addEventListener('click', function (e) {
+            loadHTML("win.html")
+        });
+              
+            }else if ( url == 'gameover.html'){
+                let playBtn = document.getElementById('gmoBtn');
+        playBtn.addEventListener('click', function (e) {
+            loadHTML("gameover.html")
+        });
+            
+               
             }
 
            
@@ -212,26 +240,6 @@ function loadHTML(url) {
 
 }
 
-function optionsLoad(info) {
 
-    //Going to load page 1 HTML Elements and click event
-    inject.innerHTML = info;
-    let injectBtn = document.getElementById('injectBtn');
 
-    injectBtn.addEventListener('click', function (e) {
-
-        alert("you clicked me");
-        //Attached to buttoon that exists in page 1
-        let pg2Btn = document.getElementById('pg2Btn');
-        pg2Btn.addEventListener('click', function (e) {
-            loadJSON("options.html")
-        });
-
-    });
-
-}
-function optonsLoad(info) {
-    inject.innerHTML = info;
-
-}
 

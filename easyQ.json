@@ -2,342 +2,391 @@
 
     "ezQ":[
         {
-            "q": "Who did Rocky lose the Championship Belt",
+            "q": "Who did Rocky lose the Championship Belt to",
             "a1":"Cluber Lang",
             "a2":"Drago",
             "a3":"Tommy Gun",
-            "a4":"Apollo Creed"
+            "a4":"Apollo Creed",
+            "C": "Cluber Lang"
 
 
         },
         {
-            "q": "Who does Rocky Fight in the first scene of Rocky",
+            "q": "Who does Rocky fight in the first scene of Rocky",
             "a1":"Apollo Creed",
             "a2":"Spider Rico",
             "a3":"Mike Tyson",
-            "a4":"Drago"
+            "a4":"Drago",
+            "C":"Spider Rico"
         },
         {
             "q":"Which movie holds the record for the biggest opening weekend for a rated R film?",
             "a1":"The Passion of the Christ",
             "a2":"The Hangover part II",
             "a3":"The Matrix Relaoded",
-            "a4":"American Sniper"
+            "a4":"American Sniper",
+            "C":"The Matrix Reloaded"
         },
         {
             "q":"What was the highest-grossing film of 2014(worldwide)?",
             "a1":"The Hunger Games:Mockingjay-Part I",
             "a2":"Transformers: Age of Extinction",
             "a3":"The Hobbit: The Battle of the Five Armies",
-            "a4":"Gardians of the galaxy"
+            "a4":"Gardians of the galaxy",
+            "C": "Transformers: Age of Extinction"
         },
         {
             "q":"Wich movie holds th record for the biggest opening weekend ($483n worldwide)?",
             "a1":"Frozen",
             "a2":"The avengers",
             "a3":"Harry potter and the deathly hollows-Part II",
-            "a4":"Passion of the Christ"
+            "a4":"Passion of the Christ",
+            "C":"Harry potter and the deathly hollows-Part II"
         },
         {
             "q":"Which best picture oscar winner made the most money?",
             "a1":"The Godfather",
             "a2":"The Lord of the ring: The return of the king",
             "a3":"Titanic",
-            "a4":"Forrest gum"
-        },
+            "a4":"Forrest gum",
+            "C":"Titanic"
+        },  
         {
             "q":"Wha's the highest-grossing movie in the Marvel Cinematic Universe?",
             "a1":"The avengers",
             "a2":"Guardians of the galaxy",
             "a3":"Iron man 3",
-            "a4":"Captin America: The winter soldier"
+            "a4":"Captin America: The winter soldier",
+            "C":"The avengers"
         },
         {
             "q":"Wich movie holds the record for the most consecutive weeks atop the box office chart?",
             "a1":"E.T The extra-terrestial",
-            "a2":"The avengers",
+            "a2":"The Avengers",
             "a3":"Spider-man",
-            "a4":"Titanic"
+            "a4":"Titanic",
+            "C":"Titanic"
         },
         {
             "q":"Which movie made the most money without ever hitting number one at th box office?",
             "a1":"Alvin and the chipmunks",
             "a2":"Dances with Wolves",
             "a3":"Sherlock holmes",
-            "a4":"My big fat greek wedding"
+            "a4":"My big fat greek wedding",
+            "C":"My big fat greek wedding"
         },
         {
             "q":"What's the highest-grossng movie of all times?",
             "a1":"Titanic",
             "a2":"Avatar",
             "a3":"The avengers",
-            "a4":"Frozen"
+            "a4":"Frozen",
+            "C":"Avatar"
         },
         {
             "q":"Titanic was the highes-grossing film of which year?",
             "a1":"1995",
             "a2":"1996",
             "a3":"1997",
-            "a4":"1998"
+            "a4":"1998",
+            "C":"1997"
         },
         {
             "q":"Which 'Harry Potter'movie made the LEAST amount of money?",
             "a1":"Harry potter and the prioner of azkaban",
             "a2":"Harry potter and the goblet of fire",
             "a3":"Harry potter and the half-blood price",
-            "a4":"Harry potter and the chamber of secrets"
+            "a4":"Harry potter and the chamber of secrets",
+            "C":"Harry potter and the prioner of azkaban"
         },
         {
             "q":"Adjusted for inflation,what's the highest-grossing movie of all time?",
             "a1":"Titanic",
             "a2":"Gone with the wind",
             "a3":"Avatar",
-            "a4":"Star Wars"
+            "a4":"Star Wars",
+            "C":"Gone with the wind"
         },
         {
             "q":"Wich is the only movie to make $200 million in the three days?",
-            "a1":"The avengers",
+            "a1":"The Avengers",
             "a2":"Iron man 3",
             "a3":"Spider-man 2",
-            "a4":"The dark knight"
+            "a4":"The dark knight",
+            "C":"The Avengers"
+            
         },
         {
             "q":"What's the highest-grossing Disney or Pixar movie?",
             "a1":"Frozen",
             "a2":"Toy story 3",
             "a3":"Toy story",
-            "a4":"The lion king"
+            "a4":"The lion king",
+            "C":"Frozen"
         },
         {
             "q":"Which horro movie had the biggest Halloween debut?",
             "a1":"A nightmare on elm street",
             "a2":"Halloween",
             "a3":"Paranormal activity 2",
-            "a4":"Saw III"
+            "a4":"Saw III",
+            "C":"Saw III"
         },
         {
             "q":"Adjusted for inflation, what's the highest-grossing animated Disney movie of all time?",
-            "a1":"snow white and the seven dwarfs",
+            "a1":"Snow white and the seven dwarfs",
             "a2":"Dumbo",
             "a3":"The lion king",
-            "a4":"Frozen"
+            "a4":"Frozen",
+            "C":"Snow white and the seven dwarfs"
         },
         {
             "q":"What was the highest-grossing film of the 2008 (worldwide)?",
             "a1":"Indiana jones and the kingdom of the crystal skull",
             "a2":"Iron man",
             "a3":"Wall-e",
-            "a4":"The dark knight"
+            "a4":"The Dark Knight",
+            "C":"The Dark Knight"
         },
         {
             "q":"What's Rocky's last name?",
             "a1":"Baggins",
             "a2":"Balboa",
             "a3":"Balor",
-            "a4":"Banner"
+            "a4":"Banner",
+            "C":"Balboa"
         },
         {
             "q":"Whom did rocky fight at the conclusion of the first movie?",
             "a1":"Apollo Credd",
             "a2":"Ivan Drago",
             "a3":"Cluber Lang",
-            "a4":"Tommy'The Machine'Gunn"
+            "a4":"Tommy'The Machine'Gunn",
+            "C":"Apollo Credd"
         },
         {
             "q":"Where is Rocky from?",
             "a1":"Boston, Massachusetts",
             "a2":"Chicago, Illinois",
             "a3":"New York City, New York",
-            "a4":"Philadelphia, Pennsylvania"
+            "a4":"Philadelphia, Pennsylvania",
+            "C":"Philadelphia, Pennsylvania"
         },
         {
             "q":"What's the name of rocky's wife?",
             "a1":"Adrian",
             "a2":"Amanda",
             "a3":"Jackie",
-            "a4":"Jamie"
+            "a4":"Jamie",
+            "C":"Adrian"
         },
         {
             "q":"In Which movie does rocky first win the Heavyweight Championship?",
             "a1":"Rocky",
             "a2":"Rocky II",
             "a3":"Rocky III",
-            "a4":"Rocky IV"
+            "a4":"Rocky IV",
+            "C":"Rocky II",
         },
         {
             "q":"Which wrestler played Thunderlips?",
             "a1":"Rick Flair",
             "a2":"Hulk Hogan",
             "a3":"Bret Hart",
-            "a4":"Randy Savage"
+            "a4":"Randy Savage",
+            "C":"Hulk Hogan"
         },
         {
             "q":"What's the name of rocky's longtime trainer?",
             "a1":"Marty",
             "a2":"Mickey",
             "a3":"Mikey",
-            "a4":"Murray"
+            "a4":"Murray",
+            "C":"Mickey"
         },
         {
             "q":"who directed 'Back to the Future?'",
             "a1":"Robert Zemeckis",
             "a2":"Steven Spielberg",
             "a3":"George Lucas",
-            "a4":"James Camron"
+            "a4":"James Camron",
+            "C":"Robert Zemeckis"
         },
         {
             "q":"Steven Spielberg did get a credit'Back to the Future' on the film, though What was it",
             "a1":"Wirter",
             "a2":"Producer",
             "a3":"Special Friend",
-            "a4":"Taco guy"
+            "a4":"Taco guy",
+            "C":"Producer"
         },
         {
             "q":"What is Doc Brown's dog's name in 'Back to the Future'?",
             "a1":"Edison",
             "a2":"Einstein",
             "a3":"Tesla",
-            "a4":"Ford"
+            "a4":"Ford",
+            "C":"Einstein"
         },
         {
             "q":"How much power does the Delorean time machine need?",
             "a1":"789 gigawatts",
             "a2":"1.21 gigawatts",
             "a3":"12 gigawatts",
-            "a4":"4 gallons of gas and a taco"
+            "a4":"4 gallons of gas and a taco",
+            "C":"1.21 gigawatts"
         },
         {
             "q":"In the Movie 'Matrix' What is Neo's real name?",
             "a1":"John P. Black",
             "a2":"Timothy J. Washington",
             "a3":"Thomas N. Anderson",
-            "a4":"John Wick"
+            "a4":"John Wick",
+            "C":"Thomas N. Anderson"
         },
         {
             "q":"What is the name of Morpheus's ship in the movie 'The Matrix'?",
             "a1":"Voyager",
             "a2":"Hammer",
             "a3":"Nebuchadnezzar",
-            "a4":"Phoenix"
+            "a4":"Phoenix",
+            "C":"Nebuchadnezzar"
         },
         {
             "q":"By what name are teh sentinels more commonly referred to in the move 'The Matrix'?",
             "a1":"Boyes",
             "a2":"Squiddies",
             "a3":"Reapers",
-            "a4":"Scanners"
+            "a4":"Scanners",
+            "C":"Squiddies"
         },
         {
             "q":"What is the first martial art form Neo learns in the movie 'The Matrix'",
             "a1":"Karate",
             "a2":"Tae Kwon Do",
             "a3":"Kung Fu",
-            "a4":"Ju Juitsu/ju-Jistsu"
+            "a4":"Ju Juitsu/ju-Jistsu",
+            "C":"Ju Juitsu/ju-Jistsu"
         },
         {
             "q":"What kind of car was used as the time machine in'Back to the Future (1985)'?",
             "a1":"Delorean",
             "a2":"Tesla Model S Plaid",
             "a3":"Tesla Model X P100D",
-            "a4":"Tesla Mode 3 Performance"
+            "a4":"Tesla Mode 3 Performance",
+            "C":"Delorean"
         },
         {
             "q":"What is the name of Will Smith's character in the Independence Day?",
             "a1":"Captin Steven hiller",
             "a2":"Ray Robinson",
             "a3":"John Miller",
-            "a4":"Sam Wiser"
+            "a4":"Sam Wiser",
+            "C":"Captin Steven hiller"
         },
         {
             "q":"Which 1997 film stars Nicolas Cage,John Cusack, and John Malkovich?",
             "a1":"Con Air",
             "a2":"Gone in 60 seconds",
             "a3":"Ghost Rider",
-            "a4":"Natinal treasure"
+            "a4":"Natinal treasure",
+            "C":"Con Air"
         },
         {
             "q":"How many people were killed in the 1996 film Scream?(Hint: It's less than 10.",
             "a1":"7",
             "a2":"9",
             "a3":"6",
-            "a4":"4"
+            "a4":"4",
+            "C":"7"
         },
         {
             "q":"What year was 'Forret Gump released?",
             "a1":"1994",
             "a2":"1984",
             "a3":"2004",
-            "a4":"2014"
+            "a4":"2014",
+            "C":"1994"
         },
         {
             "q":"Wich 90's movie featured the Looney Tunes on its soundgrack?",
             "a1":"Space Jam",
             "a2":"Space balls",
             "a3":"Lost in Space",
-            "a4":"Muppets from Space"
+            "a4":"Muppets from Space",
+            "C":"Space Jam"
         },
         {
             "q":"Which actor for some time was known as the King of the Summer Box Office(especially in July)?",
             "a1":"Tom Cruise",
             "a2":"Bruce Willis",
             "a3":"Will Smith",
-            "a4":"Adam Sandler"
+            "a4":"Adam Sandler",
+            "C":"Will Smith"
         },
         {
             "q":"What movie currently stands #1 as the most expensive moive ever made?",
             "a1":"Transformers:Revenge of the Fallen",
             "a2":"Avatar",
             "a3":"Spiderman 3",
-            "a4":"Pirates of the Carabbean: On stranger tides"
+            "a4":"Pirates of the Carabbean: On stranger tides",
+            "C":"Pirates of the Carabbean: On stranger tides"
         },
         {
             "q":"Wich movie is known as 'The Father' of Summer Blockbusters?",
             "a1":"Indiana Jones and the Temple of Doom",
             "a2":"The Godfather",
             "a3":"Jaws",
-            "a4":"Star Wars Episode IV: A new hope"
+            "a4":"Star Wars Episode IV: A new hope",
+            "C":"Jaws"
         },
         {
             "q":"After 'Spiderman', what was the second movie to debut with a 100 million in its opening weekend?",
             "a1":"Star Wars Episode 3: Revenge of the Sith",
             "a2":"Shrek 2",
             "a3":"The Matrix Reloaded",
-            "a4":"Lord of the Rings: Two Towers"
+            "a4":"Lord of the Rings: Two Towers",
+            "C":"Shrek 2"
         },
         {
             "q":"'The Godfather' movies are based on a novel by what author",
             "a1":"Elia Kazan",
             "a2":"Mario Puzo",
             "a3":"Richard Conte",
-            "a4":"Dario Fo"
+            "a4":"Dario Fo",
+            "C":"Mario Puzo"
         },
         {
             "q":"In the opening scenes of 'The Godfather', who is celebrating their wedding?",
             "a1":"Michael Corleone",
             "a2":"Sonny Corleone",
             "a3":"Fredo Corleone",
-            "a4":"Connie Corleone"
+            "a4":"Connie Corleone",
+            "C":"Connie Corleone"
         },
         {
             "q":"Wha actor won an Academy Award for is performance in 'The Godfather'",
             "a1":"Marlon Brando",
             "a2":"Al Pacino",
             "a3":"Robert Duvall",
-            "a4":"James Caan"
+            "a4":"James Caan",
+            "C":"Marlon Brando"
         },
         {
             "q":"HOw many Academy Awards did the first 'Godfather movie win?",
             "a1":"3",
             "a2":"6",
             "a3":"10",
-            "a4":"0"
+            "a4":"0",
+            "C":"6"
         },
         {
             "q":"What does Do Corleone have in his mouth when he dies",
             "a1":"Apple",
             "a2":"Orange",
             "a3":"Tomatoe",
-            "a4":"Avocado"
+            "a4":"Avocado",
+            "C":"Orange"
         }
 
         

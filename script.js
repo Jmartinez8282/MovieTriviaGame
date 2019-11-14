@@ -50,33 +50,38 @@ loadQuestion();
 let inject = document.getElementById('inject');
 let playBtn = document.getElementById('playBtn');
 let optionBtn = document.getElementById('optBtn');
+let menuBtn = document.getElementById('menuBtn');
 
-
-playBtn.addEventListener('click', function () {
+playBtn.addEventListener('click',function (){
     loadHTML('gamePage.html');
 })
-optionBtn = addEventListener('click', function (){
+optionBtn = addEventListener('click',function (){
     loadHTML ('options.html');
 })
+
+menuBtn = document.addEventListener('click',function(){
+    loadHTML('menu.html');
+})
+
+
 
 
 
 
 
 function loadHTML(url) {
-    console.log('adfdasf');
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let myArr = this.responseText;
-            console.log(myArr);
+            //console.log(myArr);
             //inject.innerHTML = myArr;
             //Add our conditinal Statements
-            if (url === 'gamePage.html') {
+            if (url == 'gamePage.html') {
                 loadGamePage(myArr);
-            } else if (url === 'options.html'){
+            } else if (url == 'options.html'){
                 loadOptionsPage(myArr);
-            }else if ( url ==='menu.html'){
+            }else if ( url =='menu.html'){
                 loadMenuPage(myArr);
             }
         }
@@ -94,6 +99,9 @@ function loadGamePage(info){
 function loadOptionsPage(info){
     inject.innerHTML = info;
     
+}
+function loadMenuPage(info){
+    inject.innertHTML = info;
 }
 
 /*

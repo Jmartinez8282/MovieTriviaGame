@@ -40,9 +40,7 @@ function loadHTML(url) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let myArr = this.responseText;
-            //console.log(myArr);
-            //inject.innerHTML = myArr;
-            //Add our conditinal Statements
+        
             if (url === 'gamePage.html') {
                 loadGamePage(myArr);
             } else if (url === 'options.html') {
@@ -99,8 +97,8 @@ for (let i = 0; i < buttons.length; i++) {
 }
 //creat our JSON DATEA LOAD//
 function loadJSON(url) {
-            let xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             tQuestions = JSON.parse(this.responseText).easyQ;
             ///------------radnomizes questions------------////
@@ -114,14 +112,14 @@ function loadJSON(url) {
                 if (diff == "") {
 
                 }
-                    xmlhttp.onreadystatechange = function () {
+                xmlhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         let myArr = JSON.parse(this.responseText);
                         allQuestions(myArr);
                     }
                 }
-                xmlhttp.open("GET", url, true);
-                xmlhttp.send();
+                //xmlhttp.open("GET", url, true);
+                //  xmlhttp.send();
             }
             function allQuestions(q) {
                 console.log(q.ezQ[49]);

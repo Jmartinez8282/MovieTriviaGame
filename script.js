@@ -72,6 +72,20 @@ function loadGamePage(info) {
 
 function loadOptionsPage(info) {
     inject.innerHTML = info;
+    let playBtn = document.getElementById('playBtn');
+    let menuBtn = document.getElementById('menuBtn');
+    let instBtn = document.getElementById('instBtn');
+
+
+playBtn.addEventListener('click',function(e){
+    loadHTML ('gamePage.html');
+})
+menuBtn.addEventListener('click',function(e){
+    loadHTML ('menu.html');
+})
+instBtn.addEventListener('click',function (e){
+    loatHTML ('instruction.html');
+})
 
 }
 function loadMenuPage(info) {

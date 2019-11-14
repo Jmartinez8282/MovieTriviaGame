@@ -8,49 +8,18 @@ let Incorrect = 0;
 let timer = 5;
 let interval;
 let tQuestions = [];
-//let diff='easyQ.json';
+let diff1='easyQ.json';
 let qNum = 0;
 
 /////Randmomize 150 questions and selectt 20 questions///---------------------------------///
 
-function loadQuestion() {
-    let xmlhttp = new XMLHttpRequest();
-    let url = "easyQ.json";
 
-    if (diff == "easy") {
-        url = "easyQ.json";
-    }
-    if (diff == "") {
-
-    }
-
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let myArr = JSON.parse(this.responseText);
-            allQuestions(myArr);
-        }
-    }
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
-function allQuestions(q) {
-    console.log(q.ezQ[49]);
-    let qNum = 0;
-    for (let i = 0; i < totalQuestions; i++) {
-        //  We are going to shuffle
-        qNum = Math.floor(Math.random() * q.ezQ.length);
-        console.log(qNum);
-        triviaQ.push(q.ezQ[qNum]);
-        q.ezQ.splice(qNum, 1);
-    }
-    console.log(triviaQ);
-}
-loadQuestion();
 //---------Trying to Inject pages---------------//////
 let inject = document.getElementById('inject');
 let playBtn = document.getElementById('playBtn');
 let optionBtn = document.getElementById('optBtn');
 let menuBtn = document.getElementById('menuBtn');
+let instBtn = document.getElementById('instBtn');
 
 playBtn.addEventListener('click',function (){
     loadHTML('gamePage.html');
@@ -61,6 +30,10 @@ optionBtn = addEventListener('click',function (){
 
 menuBtn = document.addEventListener('click',function(){
     loadHTML('menu.html');
+})
+
+instBtn = document.addEventListener('cleck',function(){
+    loadHTML('instruction.html');
 })
 
 
@@ -77,12 +50,14 @@ function loadHTML(url) {
             //console.log(myArr);
             //inject.innerHTML = myArr;
             //Add our conditinal Statements
-            if (url == 'gamePage.html') {
+            if (url === 'gamePage.html') {
                 loadGamePage(myArr);
-            } else if (url == 'options.html'){
+            } else if (url === 'options.html'){
                 loadOptionsPage(myArr);
-            }else if ( url =='menu.html'){
+            } else if (url === 'menu.html'){
                 loadMenuPage(myArr);
+            } else if (url === 'instruction.html'){
+                loadInstrucionPage(myArr);
             }
         }
     }
@@ -101,10 +76,13 @@ function loadOptionsPage(info){
     
 }
 function loadMenuPage(info){
-    inject.innertHTML = info;
+    inject.innerHTML = info;
+}
+function loadInstrucionPage(info){
+    inject.innerHTML = info;
 }
 
-/*
+
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
 //CORRECT, COUNTER, QUESTIONS, BUTTONS-USING A CLASS
@@ -120,19 +98,20 @@ let a4 = document.getElementById('a4');
 
 //// get our buttons and add eventlisteners---------//
 //let a1 = document.getElementsById('a1')
+let buttons = document.getElementsByClassName('playBtnc');
 
-for (let i = 0; i < triviaQ.length; i++) {
+for (let i = 0; i<buttons.length; i++) {
     //going to add our eventlisteners
-    triviaQ[i].addEventListener('click', function (e) {
-        // alert("you clickt a button");
-
+    buttons[i].addEventListener('click', function (e) {
+        //alert("you clickt a button");
+        console.log(e)
         checkAnswer(e.toElement.innerText);
 
     });
 }
 
 //creat our JSON DATEA LOAD//
-function loadJSON() {
+function loadJSON(url) {
 
 
     let xmlhttp = new XMLHttpRequest();
@@ -141,48 +120,84 @@ function loadJSON() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200)
         {
-            triviaQ = JSON.parse(this.responseText).easyQ;
-            console.log(triviaQ);
+            tQuestions = JSON.parse(this.responseText).easyQ;
+            ///------------radnomizes questions------------////
+            function loadQuestion() {
+                let xmlhttp = new XMLHttpRequest();
+                let url = "easyQ.json";
+            
+                if (diff == "easy") {
+                    url = "easyQ.json";
+                }
+                if (diff == "") {
+            
+                }
+            
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let myArr = JSON.parse(this.responseText);
+                        allQuestions(myArr);
+                    }
+                }
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+            }
+            function allQuestions(q) {
+                console.log(q.ezQ[49]);
+                let qNum = 0;
+                for (let i = 0; i < totalQuestions; i++) {
+                    //  We are going to shuffle
+                    qNum = Math.floor(Math.random() * q.ezQ.length);
+                    console.log(qNum);
+                    triviaQ.push(q.ezQ[qNum]);
+                    q.ezQ.splice(qNum, 1);
+                }
+                console.log(tQuestions);
+                loadQuestion();
+            }
+            
+//////////////////////randomizes questions///////////////////
 
-            interval = setInterval
-            loadQuestion();
+          
+
+         
+            
 
         }
     }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+///----------------------------------------------------///
 
 function loadQuestion()
+
+///Load the next quuestion//
 {
 
-    questions.innerText = triviaQ[qNum].q;
+    questions.innerText = tQuestions[qNum].q;
 
-    a1.innerText = triviaQ[qNum].a1;
-    a2.innerText = triviaQ[qNum].a2;
-    a3.innerText = triviaQ[qNum].a3;
-    a4.innerText = triviaQ[qNum].a4;
+    a1.innerText = tQuestions[qNum].a1;
+    a2.innerText = tQuestions[qNum].a2;
+    a3.innerText = tQuestions[qNum].a3;
+    a4.innerText = tQuestions[qNum].a4;
 
     //for loop in buttons//
 
 
 }
-
-
 ///-----------------//////
-function checkAnswer(answer)
-{
-    //Retrive teh answer and see if its correct
+function checkAnswer(answer){
+    //Retrive the answer and see if its correct
     //increment your correct number
 
-    if
-        (answer === triviaQ[qNum].correct) {
+    if(answer === tQuestions[qNum].C) {
         totalScore++;
     }
     else {
         incorrect++;
     }
-    correct.innerText = '{totalScore}/${totalQuestions}';
+    C.innerText = '${totalScore}/${totalQuestions}';
     timer = 5;
     nextQuestions();
 
@@ -234,11 +249,12 @@ function updateTime() {
 
 
 }
+loadJSON(diff1)
 ///----------------------//------------------------------///
 
 
 ///---------------------//-------------------------------///
-loadJSON(diff)
+
 ////----------------------------------------------------------------------------------------------------------------------------///////
 
 //Retrive html elements
@@ -251,4 +267,3 @@ loadJSON(diff)
 
 
 
-*/

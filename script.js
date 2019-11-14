@@ -84,7 +84,7 @@ menuBtn.addEventListener('click',function(e){
     loadHTML ('menu.html');
 })
 instBtn.addEventListener('click',function (e){
-    loatHTML ('instruction.html');
+    loadHTML ('instruction.html');
 })
 
 }

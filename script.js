@@ -51,9 +51,17 @@ let inject = document.getElementById('inject');
 let playBtn = document.getElementById('playBtn');
 let optionBtn = document.getElementById('optBtn');
 
+
 playBtn.addEventListener('click', function () {
     loadHTML('gamePage.html');
 })
+optionBtn = addEventListener('click', function (){
+    loadHTML ('options.html');
+})
+
+
+
+
 
 function loadHTML(url) {
     console.log('adfdasf');
@@ -68,6 +76,8 @@ function loadHTML(url) {
                 loadGamePage(myArr);
             } else if (url === 'options.html'){
                 loadOptionsPage(myArr);
+            }else if ( url ==='menu.html'){
+                loadMenuPage(myArr);
             }
         }
     }
@@ -80,8 +90,10 @@ function loadGamePage(info){
 
 }
 
+
 function loadOptionsPage(info){
     inject.innerHTML = info;
+    
 }
 
 /*

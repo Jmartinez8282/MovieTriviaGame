@@ -81,6 +81,7 @@ function loadGamePage(info, arr) {
 
     a2.addEventListener('click',function(e){
         
+    })
     a3.addEventListener('click',function(e){
         
     })
@@ -88,7 +89,6 @@ function loadGamePage(info, arr) {
     a4.addEventListener('click',function(e){
 
         
-
     })
     
 ///------add eventlisteners-----/////

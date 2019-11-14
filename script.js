@@ -11,7 +11,8 @@ let tQuestions = [];
 let diff1='easyQ.json';
 let qNum = 0;
 
-/////Randmomize 150 questions and selectt 20 questions///---------------------------------///
+let interval;
+
 
 
 //---------Trying to Inject pages---------------//////
@@ -104,7 +105,7 @@ for (let i = 0; i<buttons.length; i++) {
     //going to add our eventlisteners
     buttons[i].addEventListener('click', function (e) {
         //alert("you clickt a button");
-        console.log(e)
+       // console.log(e)
         checkAnswer(e.toElement.innerText);
 
     });
@@ -153,6 +154,8 @@ function loadJSON(url) {
                     q.ezQ.splice(qNum, 1);
                 }
                 console.log(tQuestions);
+                counter.innertText = timer;
+                 interval = setInterval(updateTime,1000);
                 loadQuestion();
             }
             
@@ -199,10 +202,8 @@ function checkAnswer(answer){
     }
     C.innerText = '${totalScore}/${totalQuestions}';
     timer = 5;
-    nextQuestions();
-
-    /////////------------Go to next Questions ////
-
+    counter.innerText = timer;
+    nextQuestion();
 }
 
 ///next question//
@@ -211,15 +212,14 @@ function nextQuestions()
 {
     //prep  to go to the next question
     //loadQuestion
-
+       
     if (qNum < totalQuesitons)
     {
 
         ///will runutil you hit toal questions = 20;
+       
         qNum++;
         loadQuestion();
-
-
     }
     else
     {
@@ -240,7 +240,7 @@ function updateTime() {
     if (timer == 0) {
         timer = 5;
         counter.innerText = timer;
-        nextQuestions();
+        nextQuestion();
     }
     else {
 

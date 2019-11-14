@@ -75,6 +75,22 @@ function loadGamePage(info, arr) {
 
     allQuestions(arr);
     loadQuestion();
+    a1.addEventListener('click',function(e){
+        
+    })
+
+    a2.addEventListener('click',function(e){
+        
+    a3.addEventListener('click',function(e){
+        
+    })
+
+    a4.addEventListener('click',function(e){
+
+        
+
+    })
+    
 ///------add eventlisteners-----/////
 
 

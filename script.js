@@ -1,5 +1,7 @@
 
 //-----------DECLARE OUR VARIABLES
+let inject = document.getElementById('inject');
+
 let diff = "easy";  //Can be medium or hard
 let triviaQ = [];
 let totalQuestions = 20;
@@ -14,33 +16,13 @@ let qNum = 0;
 
 
 //---------Trying to Inject pages---------------//////
-let inject = document.getElementById('inject');
-let playBtn = document.getElementById('playBtn');
-let optionBtn = document.getElementById('optBtn');
-let menuBtn = document.getElementById('menuBtn');
-let instBtn = document.getElementById('instBtn');
-
-playBtn.addEventListener('click', function () {
-    loadHTML('gamePage.html');
-})
-optionBtn = addEventListener('click', function () {
-    loadHTML('options.html');
-})
-
-menuBtn = document.addEventListener('click', function () {
-    loadHTML('menu.html');
-})
-
-instBtn = document.addEventListener('cleck', function () {
-    loadHTML('instruction.html');
-})
 
 function loadHTML(url) {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let myArr = this.responseText;
-        
+            console.log(url);
             if (url === 'gamePage.html') {
                 loadGamePage(myArr);
             } else if (url === 'options.html') {
@@ -49,6 +31,10 @@ function loadHTML(url) {
                 loadMenuPage(myArr);
             } else if (url === 'instruction.html') {
                 loadInstrucionPage(myArr);
+            } else if ( url === 'title.html') {
+                loadTitle(myArr);
+            } else {
+                alert("loadHTML if statement dude");
             }
         }
     }
@@ -56,8 +42,30 @@ function loadHTML(url) {
     xmlhttp.send();
 }
 
+function loadTitle(info) {
+    inject.innerHTML = info;
+    let playBtn = document.getElementById('playBtn');
+    let optionBtn = document.getElementById('optBtn');
+
+    playBtn.addEventListener('click', function (e) {
+        loadHTML('gamePage.html');
+    })
+
+    optionBtn.addEventListener('click', function(e){
+        loadHTML('options.html');
+    })
+}
+
 function loadGamePage(info) {
     inject.innerHTML = info;
+    let correct = document.getElementById('C');
+    let counter = document.getElementById('counter');
+    let questions = document.getElementById('questions');
+
+    let a1 = document.getElementById('a1');
+    let a2 = document.getElementById('a2');
+    let a3 = document.getElementById('a3');
+    let a4 = document.getElementById('a4');
 
 }
 
@@ -74,27 +82,19 @@ function loadInstrucionPage(info) {
 }
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
-let correct = document.getElementById('correct');
-let counter = document.getElementById('counter');
-let questions = document.getElementById('questions');
-
-let a1 = document.getElementById('a1');
-let a2 = document.getElementById('a2');
-let a3 = document.getElementById('a3');
-let a4 = document.getElementById('a4');
 
 //// get our buttons and add eventlisteners---------//
-//let a1 = document.getElementsById('a1')
-let buttons = document.getElementsByClassName('playBtnc');
+// //let a1 = document.getElementsById('a1')
+// let buttons = document.getElementsByClassName('playBtnc');
 
-for (let i = 0; i < buttons.length; i++) {
-    //going to add our eventlisteners
-    buttons[i].addEventListener('click', function (e) {
-        //alert("you clickt a button");
-        // console.log(e)
-        checkAnswer(e.toElement.innerText);
-    });
-}
+// for (let i = 0; i < buttons.length; i++) {
+//     //going to add our eventlisteners
+//     buttons[i].addEventListener('click', function (e) {
+//         //alert("you clickt a button");
+//         // console.log(e)
+//         checkAnswer(e.toElement.innerText);
+//     });
+// }
 //creat our JSON DATEA LOAD//
 function loadJSON(url) {
     let xmlhttp = new XMLHttpRequest();
@@ -118,8 +118,8 @@ function loadJSON(url) {
                         allQuestions(myArr);
                     }
                 }
-                //xmlhttp.open("GET", url, true);
-                //  xmlhttp.send();
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
             }
             function allQuestions(q) {
                 console.log(q.ezQ[49]);
@@ -143,7 +143,7 @@ function loadJSON(url) {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
-loadJSON(diff1)
+//loadJSON(diff1)
 ///----------------------------------------------------///
 
 function loadQuestion()
@@ -221,15 +221,4 @@ function updateTime() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+loadHTML('title.html');

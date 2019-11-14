@@ -1,15 +1,14 @@
 body, html {
-    height: 100%;
+  height: 100%;
 }
 
 /* The hero image */
+
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bgMovie.jpg");
-
   /* Set a specific height */
   height: 100%;
-
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -18,6 +17,7 @@ body, html {
 }
 
 /* Place text in the middle of the image */
+
 .hero-text {
   text-align: center;
   position: absolute;
@@ -27,42 +27,36 @@ body, html {
   color: white;
   font-size: 1em;
 }
-.heroh1{
-    
-font-size: 1.5em;
-color:rgba(236, 159, 16, 0.849);
 
-border-radius: 25px;
-background: rgba(87, 20, 3, 0.541);
-  
+.heroh1 {
+  font-size: 1.5em;
+  color: rgba(236, 159, 16, 0.849);
+  border-radius: 25px;
+  background: rgba(87, 20, 3, 0.541);
 }
 
-.textgold
-{
-    color:rgba(247, 137, 11, 0.767)
+.textgold {
+  color: rgba(247, 137, 11, 0.767)
 }
-.playBtnc{
-    margin-bottom:20px;
-    margin-top:10px;
-    
-padding: 25px,25px;
-    font-size: 1.5em;
-    color:rgba(67, 236, 16, 0.849);
-    background:rgba(2, 7, 73, 0.733)
-    
 
-
+.playBtnc {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 25px, 25px;
+  font-size: 1.5em;
+  color: rgba(67, 236, 16, 0.849);
+  background: rgba(2, 7, 73, 0.733)
 }
-.answerBtn{
 
-  margin-bottom:75px;
-    margin-top:20px;
-    
-padding: 50px,50px;
-    font-size: 1.5em;
-    color:rgba(16, 185, 236, 0.849);
-    background:rgba(13, 24, 180, 0.466)
+.answerBtn {
+  margin-bottom: 75px;
+  margin-top: 20px;
+  padding: 50px, 50px;
+  font-size: 1.5em;
+  color: rgba(16, 185, 236, 0.849);
+  background: rgba(13, 24, 180, 0.466)
 }
+
 .hero-text2 {
   text-align: center;
   position: absolute;
@@ -72,14 +66,14 @@ padding: 50px,50px;
   color: white;
   font-size: 2em;
 }
-.heroh2
-{
-  font-size: 1.5em;
-  color:rgba(236, 159, 16, 0.849);
 
+.heroh2 {
+  font-size: 1.5em;
+  color: rgba(236, 159, 16, 0.849);
   border-radius: 25px;
   background: rgba(87, 20, 3, 0.54);
 }
+
 .hero-text3 {
   text-align: center;
   position: absolute;
@@ -89,16 +83,10 @@ padding: 50px,50px;
   color: white;
   font-size: 1.5em;
 }
-.heroh3
-{
-  font-size: 1.5em;
-  color:rgba(236, 159, 16, 0.849);
 
+.heroh3 {
+  font-size: 1.5em;
+  color: rgba(236, 159, 16, 0.849);
   border-radius: 25px;
   background: rgba(87, 20, 3, 0.54);
 }
-
-    
-
-
-

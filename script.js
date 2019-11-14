@@ -90,9 +90,32 @@ instBtn.addEventListener('click',function (e){
 }
 function loadMenuPage(info) {
     inject.innerHTML = info;
+    let easyBtn = document.getElementById('easyBtn');
+    let medBtn = document.getElementById('medBtn');
+    let hardBtn = document.getElementById('hardBtn');
+    easyBtn.addEventListener('click',function(e){
+        loadHTML('gamePage.html');
+    })
+    medBtn.addEventListener('click',function(e){
+        loadHTML('gamePage.html');
+    })
+    hardBtn.addEventListener('click',function(e){
+        loadHTML('gamePage.html');
+    })
 }
 function loadInstrucionPage(info) {
     inject.innerHTML = info;
+    let playBtn = document.getElementById('playBtn');
+    let optBtn = document.getElementById('optBtn');
+
+    playBtn.addEventListener('click',function(e){
+        loadHTML ('gamePage.html');
+
+    })
+
+    optBtn.addEventListener('click',function(e){
+        loadHTML ('options.html')
+    })
 }
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//

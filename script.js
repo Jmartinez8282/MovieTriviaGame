@@ -8,10 +8,8 @@ let Incorrect = 0;
 let timer = 5;
 let interval;
 let tQuestions = [];
-let diff1='easyQ.json';
+let diff1 = 'easyQ.json';
 let qNum = 0;
-
-let interval;
 
 
 
@@ -22,26 +20,20 @@ let optionBtn = document.getElementById('optBtn');
 let menuBtn = document.getElementById('menuBtn');
 let instBtn = document.getElementById('instBtn');
 
-playBtn.addEventListener('click',function (){
+playBtn.addEventListener('click', function () {
     loadHTML('gamePage.html');
 })
-optionBtn = addEventListener('click',function (){
-    loadHTML ('options.html');
+optionBtn = addEventListener('click', function () {
+    loadHTML('options.html');
 })
 
-menuBtn = document.addEventListener('click',function(){
+menuBtn = document.addEventListener('click', function () {
     loadHTML('menu.html');
 })
 
-instBtn = document.addEventListener('cleck',function(){
+instBtn = document.addEventListener('cleck', function () {
     loadHTML('instruction.html');
 })
-
-
-
-
-
-
 
 function loadHTML(url) {
     let xmlhttp = new XMLHttpRequest();
@@ -53,11 +45,11 @@ function loadHTML(url) {
             //Add our conditinal Statements
             if (url === 'gamePage.html') {
                 loadGamePage(myArr);
-            } else if (url === 'options.html'){
+            } else if (url === 'options.html') {
                 loadOptionsPage(myArr);
-            } else if (url === 'menu.html'){
+            } else if (url === 'menu.html') {
                 loadMenuPage(myArr);
-            } else if (url === 'instruction.html'){
+            } else if (url === 'instruction.html') {
                 loadInstrucionPage(myArr);
             }
         }
@@ -66,28 +58,24 @@ function loadHTML(url) {
     xmlhttp.send();
 }
 
-function loadGamePage(info){
+function loadGamePage(info) {
     inject.innerHTML = info;
 
 }
 
 
-function loadOptionsPage(info){
+function loadOptionsPage(info) {
     inject.innerHTML = info;
-    
-}
-function loadMenuPage(info){
-    inject.innerHTML = info;
-}
-function loadInstrucionPage(info){
-    inject.innerHTML = info;
-}
 
-
+}
+function loadMenuPage(info) {
+    inject.innerHTML = info;
+}
+function loadInstrucionPage(info) {
+    inject.innerHTML = info;
+}
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
-//CORRECT, COUNTER, QUESTIONS, BUTTONS-USING A CLASS
-
 let correct = document.getElementById('correct');
 let counter = document.getElementById('counter');
 let questions = document.getElementById('questions');
@@ -101,40 +89,32 @@ let a4 = document.getElementById('a4');
 //let a1 = document.getElementsById('a1')
 let buttons = document.getElementsByClassName('playBtnc');
 
-for (let i = 0; i<buttons.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
     //going to add our eventlisteners
     buttons[i].addEventListener('click', function (e) {
         //alert("you clickt a button");
-       // console.log(e)
+        // console.log(e)
         checkAnswer(e.toElement.innerText);
-
     });
 }
-
 //creat our JSON DATEA LOAD//
 function loadJSON(url) {
-
-
-    let xmlhttp = new XMLHttpRequest();
-
-
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200)
-        {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
             tQuestions = JSON.parse(this.responseText).easyQ;
             ///------------radnomizes questions------------////
             function loadQuestion() {
                 let xmlhttp = new XMLHttpRequest();
                 let url = "easyQ.json";
-            
+
                 if (diff == "easy") {
                     url = "easyQ.json";
                 }
                 if (diff == "") {
-            
+
                 }
-            
-                xmlhttp.onreadystatechange = function () {
+                    xmlhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         let myArr = JSON.parse(this.responseText);
                         allQuestions(myArr);
@@ -155,22 +135,17 @@ function loadJSON(url) {
                 }
                 console.log(tQuestions);
                 counter.innertText = timer;
-                 interval = setInterval(updateTime,1000);
+                interval = setInterval(updateTime, 1000);
                 loadQuestion();
             }
-            
-//////////////////////randomizes questions///////////////////
 
-          
-
-         
-            
-
+            //////////////////////randomizes questions///////////////////
         }
     }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+loadJSON(diff1)
 ///----------------------------------------------------///
 
 function loadQuestion()
@@ -190,11 +165,11 @@ function loadQuestion()
 
 }
 ///-----------------//////
-function checkAnswer(answer){
+function checkAnswer(answer) {
     //Retrive the answer and see if its correct
     //increment your correct number
 
-    if(answer === tQuestions[qNum].C) {
+    if (answer === tQuestions[qNum].C) {
         totalScore++;
     }
     else {
@@ -208,21 +183,18 @@ function checkAnswer(answer){
 
 ///next question//
 
-function nextQuestions()
-{
+function nextQuestions() {
     //prep  to go to the next question
     //loadQuestion
-       
-    if (qNum < totalQuesitons)
-    {
+
+    if (qNum < totalQuesitons) {
 
         ///will runutil you hit toal questions = 20;
-       
+
         qNum++;
         loadQuestion();
     }
-    else
-    {
+    else {
         //
         clearInterval(interval);
         //Load up Ending screen
@@ -249,15 +221,11 @@ function updateTime() {
 
 
 }
-loadJSON(diff1)
-///----------------------//------------------------------///
 
 
-///---------------------//-------------------------------///
 
-////----------------------------------------------------------------------------------------------------------------------------///////
 
-//Retrive html elements
+
 
 
 

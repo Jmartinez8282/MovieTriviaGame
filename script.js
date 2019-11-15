@@ -53,8 +53,7 @@ function loadGamePage(info, arr) {
     let triviaQ = [];
     let totalQuestions = 20;
     let totalScore = 0;
-    let Incorrect = 0;
-    let timer = 5;
+    let timer = 20;
     let interval;
     let qNum = 0;
     let correct = document.getElementById('correct');
@@ -67,28 +66,30 @@ function loadGamePage(info, arr) {
     allQuestions(arr);
     loadQuestion();
     ///------add eventlisteners-----/////
+    a1.addEventListener('click', function (e) {
+        checkAnswer(e.toElement.innerText);
+        updateTime(e.toElement.innertext);
+    });
+    a2.addEventListener('click', function (e) {
+        checkAnswer(e.toElement.innerText);
+        updateTime(e.toElement.innertext);
+    });
+    a3.addEventListener('click', function (e) {
+        checkAnswer(e.toElement.innerText);
+        updateTime(e.toElement.innertext);
+    })
+    a4.addEventListener('click', function (e) {
+        checkAnswer(e.toElement.innerText);
+        updateTime(e.toElement.innertext);
+    })
     function loadQuestion() {
-        a1.addEventListener('click', function (e) {
-            checkAnswer(e.toElement.innerText);
-            updateTime(e.toElement.innertext);
-        });
-        a2.addEventListener('click', function (e) {
-            checkAnswer(e.toElement.innerText);
-            updateTime(e.toElement.innertext);
-        });
-        a3.addEventListener('click', function (e) {
-            checkAnswer(e.toElement.innerText);
-            updateTime(e.toElement.innertext);
-        })
-        a4.addEventListener('click', function (e) {
-            checkAnswer(e.toElement.innerText);
-            updateTime(e.toElement.innertext);
-        })
+        clearInterval(interval)
         questions.innerText = triviaQ[qNum].q;
         a1.innerText = triviaQ[qNum].a1;
         a2.innerText = triviaQ[qNum].a2;
         a3.innerText = triviaQ[qNum].a3;
         a4.innerText = triviaQ[qNum].a4;
+        interval=setInterval(updateTime,1000)
      //for loop in buttons//
     }
     ///-----------------//////
@@ -96,14 +97,11 @@ function loadGamePage(info, arr) {
         //Retrive the answer and see if its correct
         //increment your correct number
 
-        if (answer === triviaQ[qNum]) {
+        if (answer === triviaQ[qNum].C) {
             totalScore++;
         }
-        else //{
-           // incorrect++;
-        //}
-        correct.innerText = '${totalScore}/${totalQuestions}';
-        timer = 5;
+        correct.innerText = `${totalScore}/${totalQuestions}`;
+        timer = 20;
         counter.innerText = timer;
         nextQuestion();
     }
@@ -111,9 +109,10 @@ function loadGamePage(info, arr) {
     function nextQuestion() {
         //prep  to go to the next question
         //loadQuestion
+        qNum++;
         if (qNum < totalQuestions) {
+            console.log(qNum)
             ///will runutil you hit toal questions = 20;
-            qNum++;
             loadQuestion();
         }
         else {
@@ -129,7 +128,7 @@ function loadGamePage(info, arr) {
         //Make sure time isn't over and its is shownng correc time
         timer--;
         if (timer == 0) {
-            timer = 5;
+            timer = 20;
             counter.innerText = timer;
             nextQuestion();
         }
@@ -138,17 +137,14 @@ function loadGamePage(info, arr) {
         }
     }
 
-    function allQuestions(q) {
-        console.log(tQuestions);
-        let qNum = 0;
+    function allQuestions() {
+        let rNum = 0;
         for (let i = 0; i < totalQuestions; i++) {
             //  We are going to shuffle
-            qNum = Math.floor(Math.random() * tQuestions.length);
-            console.log(qNum);
-            triviaQ.push(tQuestions[qNum]);
-            tQuestions.splice(qNum, 1);
+            rNum = Math.floor(Math.random() * tQuestions.length);
+            triviaQ.push(tQuestions[rNum]);
+            tQuestions.splice(rNum, 1);
         }
-        console.log(triviaQ);
         counter.innertText = timer;
     }
 }

@@ -70,15 +70,19 @@ function loadGamePage(info, arr) {
     function loadQuestion() {
         a1.addEventListener('click', function (e) {
             checkAnswer(e.toElement.innerText);
+            updateTime(e.toElement.innertext);
         });
         a2.addEventListener('click', function (e) {
             checkAnswer(e.toElement.innerText);
+            updateTime(e.toElement.innertext);
         });
         a3.addEventListener('click', function (e) {
             checkAnswer(e.toElement.innerText);
+            updateTime(e.toElement.innertext);
         })
         a4.addEventListener('click', function (e) {
             checkAnswer(e.toElement.innerText);
+            updateTime(e.toElement.innertext);
         })
         questions.innerText = triviaQ[qNum].q;
         a1.innerText = triviaQ[qNum].a1;

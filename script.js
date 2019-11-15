@@ -29,6 +29,12 @@ function loadHTML(url) {
                 loadInstrucionPage(myArr);
             } else if (url === 'title.html') {
                 loadTitle(myArr);
+            } else if (url === 'win.html') {
+                loadWinPage(myArr);
+            } else if (url === 'gameover.html') {
+                loadGameOver(myArr);
+            } else if (url === 'MatrixButton.html') {
+                loadMatrixPage(myArr);
             } else {
                 alert("loadHTML if statement dude");
             }
@@ -118,8 +124,28 @@ function loadGamePage(info, arr) {
         else {
             //
             clearInterval(interval);
+            function loadWinPage (info) {
+                
+                inject.innerHTML = info;
+                let playBtn = document.getElementById('playBtn');
+                let OptBtn = document.getElementById('OptBtn');
+                let QuitBtn = document.getElementById('playBtn');
+                let unlockBtn = document.getElementById('unlockBtn')
+                playBtn.addEventListener('click', function (e) {
+                    loadHTML('gamePage.html');
+                })
+                OptBtn.addEventListener('click', function (e) {
+                    loadHTML('options.html');
+                })
+                QuitBtn.addEventListener('click', function (e) {
+                    loadHTML('gamePage.html');
+                })
+                unlockBtn.addEventListener('click',function(e){
+                    loadHTML('Matrixbutton.html');
+                })
+            }
             //Load up Ending screen
-            alert("You finsihed the game. Congrats you got   " + correct.innerText + " questions right");
+            //alert("you finsihed the game. Congrats you got   " + correct.innerText + " questions right");
         }
     }
 

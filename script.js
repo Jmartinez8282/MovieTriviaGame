@@ -92,22 +92,22 @@ function loadGamePage(info, arr) {
         //Retrive the answer and see if its correct
         //increment your correct number
 
-        if (answer === triviaQ[qNum].correct) {
+        if (answer === triviaQ[qNum]) {
             totalScore++;
         }
-        else {
-            incorrect++;
-        }
+        else //{
+           // incorrect++;
+        //}
         correct.innerText = '${totalScore}/${totalQuestions}';
         timer = 5;
         counter.innerText = timer;
         nextQuestion();
     }
     ///next question//
-    function nextQuestions() {
+    function nextQuestion() {
         //prep  to go to the next question
         //loadQuestion
-        if (qNum < totalQuesitons) {
+        if (qNum < totalQuestions) {
             ///will runutil you hit toal questions = 20;
             qNum++;
             loadQuestion();

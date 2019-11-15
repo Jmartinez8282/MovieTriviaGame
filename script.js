@@ -8,6 +8,7 @@ function loadJSON(url) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             tQuestions = JSON.parse(this.responseText).easyQ;
+            
         }
     }
     xmlhttp.open("GET", url, true);
@@ -74,27 +75,33 @@ function loadGamePage(info, arr) {
     let a4 = document.getElementById('a4');
 
     allQuestions(arr);
+
+
     loadQuestion();
-    a1.addEventListener('click',function(e){
-        
-    })
 
-    a2.addEventListener('click',function(e){
-        
-    })
-    a3.addEventListener('click',function(e){
-        
-    })
 
-    a4.addEventListener('click',function(e){
 
-        
-    })
-    
-///------add eventlisteners-----/////
+    ///------add eventlisteners-----/////
 
 
     function loadQuestion() {
+
+        a1.addEventListener('click', function (e) {
+
+        });
+        a2.addEventListener('click', function (e) {
+           
+        });
+
+
+        a3.addEventListener('click', function (e) {
+
+        })
+
+        a4.addEventListener('click', function (e) {
+
+
+        })
         questions.innerText = triviaQ[qNum].q;
 
         a1.innerText = triviaQ[qNum].a1;
@@ -223,13 +230,13 @@ function loadInstrucionPage(info) {
 // //let a1 = document.getElementsById('a1')
 // let buttons = document.getElementsByClassName('playBtnc');
 
-// for (let i = 0; i < buttons.length; i++) {
-//     //going to add our eventlisteners
-//     buttons[i].addEventListener('click', function (e) {
+//for (let i = 0; i < buttons.length; i++) {
+//going to add our eventlisteners
+//   buttons[i].addEventListener('click', function (e) {
 //         //alert("you clickt a button");
-//         // console.log(e)
-//         checkAnswer(e.toElement.innerText);
-//     });
+//   console.log(e)
+//   checkAnswer(e.toElement.innerText);
+//});
 // }
 //creat our JSON DATEA LOAD//
 

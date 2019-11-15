@@ -57,7 +57,7 @@ function loadGamePage(info, arr) {
     let timer = 5;
     let interval;
     let qNum = 0;
-    let correct = document.getElementById('C');
+    let correct = document.getElementById('correct');
     let counter = document.getElementById('counter');
     let questions = document.getElementById('questions');
     let a1 = document.getElementById('a1');
@@ -69,12 +69,16 @@ function loadGamePage(info, arr) {
     ///------add eventlisteners-----/////
     function loadQuestion() {
         a1.addEventListener('click', function (e) {
+            checkAnswer(e.toElement.innerText);
         });
         a2.addEventListener('click', function (e) {
+            checkAnswer(e.toElement.innerText);
         });
         a3.addEventListener('click', function (e) {
+            checkAnswer(e.toElement.innerText);
         })
         a4.addEventListener('click', function (e) {
+            checkAnswer(e.toElement.innerText);
         })
         questions.innerText = triviaQ[qNum].q;
         a1.innerText = triviaQ[qNum].a1;
@@ -88,13 +92,13 @@ function loadGamePage(info, arr) {
         //Retrive the answer and see if its correct
         //increment your correct number
 
-        if (answer === triviaQ[qNum].C) {
+        if (answer === triviaQ[qNum].correct) {
             totalScore++;
         }
         else {
             incorrect++;
         }
-        C.innerText = '${totalScore}/${totalQuestions}';
+        correct.innerText = '${totalScore}/${totalQuestions}';
         timer = 5;
         counter.innerText = timer;
         nextQuestion();

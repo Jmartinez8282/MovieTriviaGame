@@ -20,7 +20,7 @@ function loadHTML(url) {
             let myArr = this.responseText;
             console.log(url);
             if (url === 'gamePage.html') {
-                loadGamePage(myArr);
+                loadGamePage(myArr, tQuestions);
             } else if (url === 'options.html') {
                 loadOptionsPage(myArr);
             } else if (url === 'menu.html') {
@@ -81,13 +81,12 @@ function loadGamePage(info, arr) {
         a2.innerText = triviaQ[qNum].a2;
         a3.innerText = triviaQ[qNum].a3;
         a4.innerText = triviaQ[qNum].a4;
-     //for loop in buttons//
+        //for loop in buttons//
     }
     ///-----------------//////
     function checkAnswer(answer) {
         //Retrive the answer and see if its correct
         //increment your correct number
-
         if (answer === triviaQ[qNum].C) {
             totalScore++;
         }
@@ -115,7 +114,6 @@ function loadGamePage(info, arr) {
             alert("you finsihed the game. Congrats. I have Spoken");
         }
     }
-
     //set our timer////
     function updateTime() {
         //Make sure time isn't over and its is shownng correc time
@@ -129,7 +127,6 @@ function loadGamePage(info, arr) {
             counter.innerText = timer;
         }
     }
-
     function allQuestions(q) {
         console.log(tQuestions);
         let qNum = 0;
@@ -144,8 +141,6 @@ function loadGamePage(info, arr) {
         counter.innertText = timer;
     }
 }
-
-
 function loadOptionsPage(info) {
     inject.innerHTML = info;
     let playBtn = document.getElementById('playBtn');
@@ -180,23 +175,18 @@ function loadInstrucionPage(info) {
     inject.innerHTML = info;
     let playBtn = document.getElementById('playBtn');
     let optBtn = document.getElementById('optBtn');
-
     playBtn.addEventListener('click', function (e) {
         loadHTML('gamePage.html');
-
     })
-
     optBtn.addEventListener('click', function (e) {
         loadHTML('options.html')
     })
 }
 //-----------------------------------------------------------------------------------------------------------////
 /////GRAB ALL OUR ELMENTS FROM HTML PAGE//
-
 //// get our buttons and add eventlisteners---------//
 // //let a1 = document.getElementsById('a1')
 // let buttons = document.getElementsByClassName('playBtnc');
-
 //for (let i = 0; i < buttons.length; i++) {
 //going to add our eventlisteners
 //   buttons[i].addEventListener('click', function (e) {
@@ -206,8 +196,4 @@ function loadInstrucionPage(info) {
 //});
 // }
 //creat our JSON DATEA LOAD//
-
-
-
-
 loadHTML('title.html');

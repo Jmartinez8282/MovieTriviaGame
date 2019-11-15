@@ -119,7 +119,7 @@ function loadGamePage(info, arr) {
             //
             clearInterval(interval);
             //Load up Ending screen
-            alert("you finsihed the game. Congrats. I have Spoken");
+            alert("You finsihed the game. Congrats you got   " + correct.innerText + " questions right");
         }
     }
 

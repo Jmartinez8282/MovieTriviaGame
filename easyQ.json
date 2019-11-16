@@ -36,9 +36,9 @@
             "C": "Transformers: Age of Extinction"
         },
         {
-            "q":"Wich movie holds th record for the biggest opening weekend ($483n worldwide)?",
+            "q":"Which movie holds th record for the biggest opening weekend ($483n worldwide)?",
             "a1":"Frozen",
-            "a2":"The avengers",
+            "a2":"The Avengers",
             "a3":"Harry potter and the deathly hollows-Part II",
             "a4":"Passion of the Christ",
             "C":"Harry potter and the deathly hollows-Part II"
@@ -53,7 +53,7 @@
         },  
         {
             "q":"What's the highest-grossing movie in the Marvel Cinematic Universe?",
-            "a1":"The avengers",
+            "a1":"The Avengers",
             "a2":"Guardians of the galaxy",
             "a3":"Iron man 3",
             "a4":"Captin America: The winter soldier",
@@ -108,7 +108,7 @@
             "C":"Gone with the wind"
         },
         {
-            "q":"Wich is the only movie to make $200 million in the three days?",
+            "q":"Which is the only movie to make $200 million in the three days?",
             "a1":"The Avengers",
             "a2":"Iron man 3",
             "a3":"Spider-man 2",
@@ -205,7 +205,7 @@
             "C":"Mickey"
         },
         {
-            "q":"who directed 'Back to the Future?'",
+            "q":"Who directed 'Back to the Future?'",
             "a1":"Robert Zemeckis",
             "a2":"Steven Spielberg",
             "a3":"George Lucas",
@@ -309,7 +309,7 @@
             "C":"1994"
         },
         {
-            "q":"Wich 90's movie featured the Looney Tunes on its soundgrack?",
+            "q":"Which 90's movie featured the Looney Tunes on its soundgrack?",
             "a1":"Space Jam",
             "a2":"Space balls",
             "a3":"Lost in Space",
@@ -333,7 +333,7 @@
             "C":"Pirates of the Carabbean: On stranger tides"
         },
         {
-            "q":"Wich movie is known as 'The Father' of Summer Blockbusters?",
+            "q":"Which movie is known as 'The Father' of Summer Blockbusters?",
             "a1":"Indiana Jones and the Temple of Doom",
             "a2":"The Godfather",
             "a3":"Jaws",
@@ -365,7 +365,7 @@
             "C":"Connie Corleone"
         },
         {
-            "q":"Wha actor won an Academy Award for is performance in 'The Godfather'",
+            "q":"What actor won an Academy Award for is performance in 'The Godfather'",
             "a1":"Marlon Brando",
             "a2":"Al Pacino",
             "a3":"Robert Duvall",
@@ -373,7 +373,7 @@
             "C":"Marlon Brando"
         },
         {
-            "q":"HOw many Academy Awards did the first 'Godfather movie win?",
+            "q":"How many Academy Awards did the first 'Godfather movie win?",
             "a1":"3",
             "a2":"6",
             "a3":"10",
@@ -381,7 +381,7 @@
             "C":"6"
         },
         {
-            "q":"What does Do Corleone have in his mouth when he dies",
+            "q":"What does Don Corleone have in his mouth when he dies",
             "a1":"Apple",
             "a2":"Orange",
             "a3":"Tomatoe",

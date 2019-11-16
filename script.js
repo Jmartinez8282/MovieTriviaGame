@@ -1,6 +1,7 @@
 //-----------DECLARE OUR VARIABLES
 let inject = document.getElementById('inject');
 let tQuestions = [];
+
 function loadJSON(url) {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -55,6 +56,7 @@ function loadTitle(info) {
     })
 }
 function loadGamePage(info, arr) {
+    
     inject.innerHTML = info;
     let triviaQ = [];
     let totalQuestions = 20;
@@ -62,6 +64,7 @@ function loadGamePage(info, arr) {
     let timer = 20;
     let interval;
     let qNum = 0;
+   
     let correct = document.getElementById('correct');
     let counter = document.getElementById('counter');
     let questions = document.getElementById('questions');
@@ -69,8 +72,10 @@ function loadGamePage(info, arr) {
     let a2 = document.getElementById('a2');
     let a3 = document.getElementById('a3');
     let a4 = document.getElementById('a4');
+    
     allQuestions(arr);
     loadQuestion();
+  
     ///------add eventlisteners-----/////
     a1.addEventListener('click', function (e) {
         checkAnswer(e.toElement.innerText);
@@ -124,31 +129,11 @@ function loadGamePage(info, arr) {
         else {
             //
             clearInterval(interval);
-            function loadWinPage (info) {
-                
-                inject.innerHTML = info;
-                let playBtn = document.getElementById('playBtn');
-                let OptBtn = document.getElementById('OptBtn');
-                let QuitBtn = document.getElementById('playBtn');
-                let unlockBtn = document.getElementById('unlockBtn')
-                playBtn.addEventListener('click', function (e) {
-                    loadHTML('gamePage.html');
-                })
-                OptBtn.addEventListener('click', function (e) {
-                    loadHTML('options.html');
-                })
-                QuitBtn.addEventListener('click', function (e) {
-                    loadHTML('gamePage.html');
-                })
-                unlockBtn.addEventListener('click',function(e){
-                    loadHTML('Matrixbutton.html');
-                })
-            }
+            loadHTML('win.html');
             //Load up Ending screen
-            //alert("you finsihed the game. Congrats you got   " + correct.innerText + " questions right");
+           // alert("you finsihed the game. Congrats you got   " + correct.innerText + " questions right " + "  Play Again! " + loadHTML('win.html'));
         }
     }
-
     //set our timer////
     function updateTime() {
         //Make sure time isn't over and its is shownng correc time
@@ -173,6 +158,26 @@ function loadGamePage(info, arr) {
         }
         counter.innertText = timer;
     }
+}
+function loadWinPage(info) {
+                
+    inject.innerHTML = info;
+    let playBtn = document.getElementById('playBtn');
+    let OptBtn = document.getElementById('OptBtn');
+    let QuitBtn = document.getElementById('playBtn');
+    let unlockBtn = document.getElementById('unlockBtn')
+    playBtn.addEventListener('click', function (e) {
+        loadHTML('gamePage.html');
+    })
+    OptBtn.addEventListener('click', function (e) {
+        loadHTML('options.html');
+    })
+    QuitBtn.addEventListener('click', function (e) {
+        loadHTML('gamePage.html');
+    })
+    unlockBtn.addEventListener('click',function(e){
+        loadHTML('Matrixbutton.html');
+    })
 }
 
 
@@ -241,3 +246,4 @@ function loadInstrucionPage(info) {
 
 
 loadHTML('title.html');
+

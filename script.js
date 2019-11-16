@@ -50,10 +50,14 @@ function loadTitle(info) {
     let optionBtn = document.getElementById('optBtn');
     playBtn.addEventListener('click', function (e) {
         loadHTML('gamePage.html');
+        let audio= document.getElementById('sound');
+audio.play();
     })
     optionBtn.addEventListener('click', function (e) {
         loadHTML('options.html');
     })
+    let audio= document.getElementById('sound');
+audio.play();
 }
 function loadGamePage(info, arr) {
 
@@ -93,6 +97,7 @@ function loadGamePage(info, arr) {
         checkAnswer(e.toElement.innerText);
         updateTime(e.toElement.innertext);
     })
+    
     function loadQuestion() {
         clearInterval(interval)
         questions.innerText = triviaQ[qNum].q;

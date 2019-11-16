@@ -37,7 +37,7 @@ function loadHTML(url) {
             } else if (url === 'MatrixButton.html') {
                 loadMatrixPage(myArr);
             } else {
-                alert("loadHTML if statement dude");
+                alert("THIS WAS SUPPOSED TO LOAD A COOL MATRIX PAGE BUT I RAN OUT OF TIME!00000010101010101010100001010101010101011111111111111111111111111111111111111110101010111010101010");
             }
         }
     }
@@ -56,7 +56,7 @@ function loadTitle(info) {
     })
 }
 function loadGamePage(info, arr) {
-    
+
     inject.innerHTML = info;
     let triviaQ = [];
     let totalQuestions = 20;
@@ -64,7 +64,7 @@ function loadGamePage(info, arr) {
     let timer = 20;
     let interval;
     let qNum = 0;
-   
+
     let correct = document.getElementById('correct');
     let counter = document.getElementById('counter');
     let questions = document.getElementById('questions');
@@ -72,10 +72,10 @@ function loadGamePage(info, arr) {
     let a2 = document.getElementById('a2');
     let a3 = document.getElementById('a3');
     let a4 = document.getElementById('a4');
-    
+
     allQuestions(arr);
     loadQuestion();
-  
+
     ///------add eventlisteners-----/////
     a1.addEventListener('click', function (e) {
         checkAnswer(e.toElement.innerText);
@@ -100,8 +100,8 @@ function loadGamePage(info, arr) {
         a2.innerText = triviaQ[qNum].a2;
         a3.innerText = triviaQ[qNum].a3;
         a4.innerText = triviaQ[qNum].a4;
-        interval=setInterval(updateTime,1000)
-     //for loop in buttons//
+        interval = setInterval(updateTime, 1000)
+        //for loop in buttons//
     }
     ///-----------------//////
     function checkAnswer(answer) {
@@ -131,7 +131,7 @@ function loadGamePage(info, arr) {
             clearInterval(interval);
             loadHTML('win.html');
             //Load up Ending screen
-           // alert("you finsihed the game. Congrats you got   " + correct.innerText + " questions right " + "  Play Again! " + loadHTML('win.html'));
+            // alert("you finsihed the game. Congrats you got   " + correct.innerText + " questions right " + "  Play Again! " + loadHTML('win.html'));
         }
     }
     //set our timer////
@@ -160,24 +160,35 @@ function loadGamePage(info, arr) {
     }
 }
 function loadWinPage(info) {
-                
+
+
     inject.innerHTML = info;
+
+
     let playBtn = document.getElementById('playBtn');
     let OptBtn = document.getElementById('OptBtn');
-    let QuitBtn = document.getElementById('playBtn');
-    let unlockBtn = document.getElementById('unlockBtn')
+    let quitBtn = document.getElementById('quitBtn');
+    let unlockBtn = document.getElementById('unlockBtn');
+
+
+
     playBtn.addEventListener('click', function (e) {
         loadHTML('gamePage.html');
     })
     OptBtn.addEventListener('click', function (e) {
         loadHTML('options.html');
     })
-    QuitBtn.addEventListener('click', function (e) {
-        loadHTML('gamePage.html');
+    quitBtn.addEventListener('click', function (e) {
+        loadHTML('title.html');
+
+
     })
-    unlockBtn.addEventListener('click',function(e){
+    unlockBtn.addEventListener('click', function (e) {
         loadHTML('Matrixbutton.html');
+
     })
+
+
 }
 
 

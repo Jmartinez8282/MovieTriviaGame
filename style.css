@@ -32,7 +32,7 @@ body, html {
   font-size: 1.5em;
   color: rgba(236, 159, 16, 0.849);
   border-radius: 25px;
-  background: rgba(87, 20, 3, 0.541);
+  background: rgba(87, 20, 3, 0.753);
 }
 
 .textgold {
@@ -44,8 +44,8 @@ body, html {
   margin-top: 10px;
   padding: 25px, 25px;
   font-size: 1.5em;
-  color: rgba(67, 236, 16, 0.849);
-  background: rgba(2, 7, 73, 0.733)
+  color: rgba(187, 128, 0, 0.993);
+  background: rgba(66, 6, 6, 0.76)
 }
 
 .answerBtn {
@@ -71,7 +71,7 @@ body, html {
   font-size: 1.5em;
   color: rgba(236, 159, 16, 0.849);
   border-radius: 25px;
-  background: rgba(87, 20, 3, 0.54);
+  background: rgba(87, 20, 3, 0.74);
 }
 
 .hero-text3 {
@@ -88,5 +88,12 @@ body, html {
   font-size: 1.5em;
   color: rgba(236, 159, 16, 0.849);
   border-radius: 25px;
-  background: rgba(87, 20, 3, 0.54);
+  background: rgba(87, 20, 3, 0.856);
+}
+.youwin{
+  font-size: 1.5em;
+  color: rgb(38, 0, 255);
+  border-radius: 25px;
+  background: rgba(87, 20, 3, 0.541);
+
 }
